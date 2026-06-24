@@ -1,28 +1,27 @@
 import { Link } from "react-router-dom";
-import { PawPrint, DollarSign, Calendar, Star, Shield, Users } from "lucide-react";
+import { PawPrint, DollarSign, Calendar, Shield, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const benefits = [
-  { icon: DollarSign, title: "Earn on Your Schedule", desc: "Set your own rates and availability. Earn up to $1,000/month caring for pets you love." },
-  { icon: Calendar, title: "Flexible Bookings", desc: "Accept bookings that fit your life. You're always in control of your calendar." },
-  { icon: Shield, title: "Insurance Included", desc: "Every booking includes premium insurance coverage for complete peace of mind." },
-  { icon: Users, title: "Growing Community", desc: "Join thousands of trusted pet care providers across the country." },
+  { icon: DollarSign, title: "Ganhe no Seu Tempo", desc: "Defina seus próprios preços e disponibilidade. Ganhe até R$ 5.000/mês cuidando de pets que você ama." },
+  { icon: Calendar, title: "Reservas Flexíveis", desc: "Aceite reservas que se encaixem na sua rotina. Você sempre tem o controle da sua agenda." },
+  { icon: Shield, title: "Seguro Incluso", desc: "Toda reserva inclui cobertura de seguro premium para total tranquilidade." },
+  { icon: Users, title: "Comunidade em Crescimento", desc: "Junte-se a milhares de cuidadores de pets de confiança em todo o país." },
 ];
 
 const steps = [
-  { num: "1", title: "Create Your Profile", desc: "Sign up and tell us about your experience, home, and the pets you'd love to care for." },
-  { num: "2", title: "Set Your Services", desc: "Choose from boarding, walking, daycare, and more. Set your own prices." },
-  { num: "3", title: "Start Earning", desc: "Accept bookings from pet owners in your area and start doing what you love." },
+  { num: "1", title: "Crie Seu Perfil", desc: "Cadastre-se e conte sobre sua experiência, sua casa e os pets que você adoraria cuidar." },
+  { num: "2", title: "Defina Seus Serviços", desc: "Escolha entre hospedagem, passeio, creche e mais. Defina seus próprios preços." },
+  { num: "3", title: "Comece a Ganhar", desc: "Aceite reservas de tutores da sua região e comece a fazer o que ama." },
 ];
 
 const Providers = () => (
   <div className="min-h-screen bg-background">
     <Navbar />
 
-    {/* Hero */}
     <section className="pt-24 pb-16">
       <div className="container mx-auto px-4">
         <motion.div
@@ -34,22 +33,21 @@ const Providers = () => (
             <PawPrint className="w-8 h-8 text-primary-foreground" />
           </div>
           <h1 className="text-3xl md:text-5xl font-bold text-primary-foreground mb-4">
-            Turn Your Love for Pets Into Income
+            Transforme Seu Amor por Pets em Renda
           </h1>
           <p className="text-primary-foreground/80 text-lg max-w-2xl mx-auto mb-8">
-            Join PawStay as a pet care provider and earn money doing what you love. Set your own schedule, rates, and services.
+            Junte-se à AuMiau como cuidador de pets e ganhe dinheiro fazendo o que ama. Defina sua agenda, preços e serviços.
           </p>
           <Button size="lg" variant="secondary" className="rounded-xl font-semibold text-base px-8" asChild>
-            <Link to="/signup">Get Started</Link>
+            <Link to="/signup">Começar Agora</Link>
           </Button>
         </motion.div>
       </div>
     </section>
 
-    {/* Benefits */}
     <section className="py-16">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-foreground text-center mb-10">Why Provide on PawStay?</h2>
+        <h2 className="text-3xl font-bold text-foreground text-center mb-10">Por Que Ser Cuidador na AuMiau?</h2>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {benefits.map((b, i) => (
             <motion.div
@@ -71,10 +69,9 @@ const Providers = () => (
       </div>
     </section>
 
-    {/* How it works */}
     <section className="py-16 bg-secondary/50">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-foreground text-center mb-10">How It Works</h2>
+        <h2 className="text-3xl font-bold text-foreground text-center mb-10">Como Funciona</h2>
         <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
           {steps.map((s, i) => (
             <motion.div
@@ -96,15 +93,14 @@ const Providers = () => (
       </div>
     </section>
 
-    {/* CTA */}
     <section className="py-16">
       <div className="container mx-auto px-4 text-center">
-        <h2 className="text-3xl font-bold text-foreground mb-4">Ready to Get Started?</h2>
+        <h2 className="text-3xl font-bold text-foreground mb-4">Pronto Para Começar?</h2>
         <p className="text-muted-foreground mb-8 max-w-lg mx-auto">
-          Create your free provider profile today and start connecting with pet owners in your area.
+          Crie seu perfil gratuito de cuidador hoje e comece a se conectar com tutores da sua região.
         </p>
         <Button size="lg" className="rounded-xl font-semibold text-base px-8" asChild>
-          <Link to="/signup">Sign Up as a Provider</Link>
+          <Link to="/signup">Cadastre-se como Cuidador</Link>
         </Button>
       </div>
     </section>

@@ -5,7 +5,7 @@ interface AvailabilityCalendarProps {
   availability: { [day: number]: "available" | "booked" | "blocked" };
 }
 
-const DAYS_OF_WEEK = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+const DAYS_OF_WEEK = ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"];
 
 const AvailabilityCalendar = ({ availability }: AvailabilityCalendarProps) => {
   const now = new Date();
@@ -14,7 +14,7 @@ const AvailabilityCalendar = ({ availability }: AvailabilityCalendarProps) => {
 
   const firstDay = new Date(year, month, 1).getDay();
   const daysInMonth = new Date(year, month + 1, 0).getDate();
-  const monthName = new Date(year, month).toLocaleString("default", { month: "long" });
+  const monthName = new Date(year, month).toLocaleString("pt-BR", { month: "long" });
 
   const prev = () => {
     if (month === 0) { setMonth(11); setYear(year - 1); }
@@ -38,27 +38,24 @@ const AvailabilityCalendar = ({ availability }: AvailabilityCalendarProps) => {
 
   return (
     <div>
-      <h2 className="text-2xl font-bold text-foreground mb-5">Availability</h2>
+      <h2 className="text-2xl font-bold text-foreground mb-5">Disponibilidade</h2>
       <div className="bg-card rounded-2xl shadow-card p-6">
-        {/* Header */}
         <div className="flex items-center justify-between mb-4">
           <button onClick={prev} className="w-8 h-8 rounded-full hover:bg-secondary flex items-center justify-center transition-colors">
             <ChevronLeft className="w-4 h-4 text-foreground" />
           </button>
-          <span className="font-display font-semibold text-foreground">{monthName} {year}</span>
+          <span className="font-display font-semibold text-foreground capitalize">{monthName} {year}</span>
           <button onClick={next} className="w-8 h-8 rounded-full hover:bg-secondary flex items-center justify-center transition-colors">
             <ChevronRight className="w-4 h-4 text-foreground" />
           </button>
         </div>
 
-        {/* Day headers */}
         <div className="grid grid-cols-7 gap-1 mb-1">
           {DAYS_OF_WEEK.map((d) => (
             <div key={d} className="text-center text-xs text-muted-foreground py-1">{d}</div>
           ))}
         </div>
 
-        {/* Days */}
         <div className="grid grid-cols-7 gap-1">
           {cells.map((day, i) => (
             <div key={i} className="aspect-square flex items-center justify-center">
@@ -71,11 +68,10 @@ const AvailabilityCalendar = ({ availability }: AvailabilityCalendarProps) => {
           ))}
         </div>
 
-        {/* Legend */}
         <div className="flex gap-4 mt-4 text-xs text-muted-foreground">
-          <span className="flex items-center gap-1"><span className="w-3 h-3 rounded bg-success/15" /> Available</span>
-          <span className="flex items-center gap-1"><span className="w-3 h-3 rounded bg-primary/20" /> Booked</span>
-          <span className="flex items-center gap-1"><span className="w-3 h-3 rounded bg-muted" /> Blocked</span>
+          <span className="flex items-center gap-1"><span className="w-3 h-3 rounded bg-success/15" /> Disponível</span>
+          <span className="flex items-center gap-1"><span className="w-3 h-3 rounded bg-primary/20" /> Reservado</span>
+          <span className="flex items-center gap-1"><span className="w-3 h-3 rounded bg-muted" /> Bloqueado</span>
         </div>
       </div>
     </div>

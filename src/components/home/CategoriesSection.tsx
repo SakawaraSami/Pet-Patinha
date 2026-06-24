@@ -4,9 +4,9 @@ import dogImg from "@/assets/dog.png";
 import exoticImg from "@/assets/exotic.png";
 
 const categories = [
-  { name: "Cats", image: catImg },
-  { name: "Dogs", image: dogImg },
-  { name: "Exotic", image: exoticImg },
+  { name: "Gatos", image: catImg },
+  { name: "Cães", image: dogImg },
+  { name: "Exóticos", image: exoticImg },
 ];
 
 const CategoriesSection = () => (

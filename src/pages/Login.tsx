@@ -21,10 +21,10 @@ const Login = () => {
     setLoading(true);
     try {
       await signIn(email, password);
-      toast.success("Welcome back!");
+      toast.success("Bem-vindo de volta!");
       navigate("/");
     } catch (err: any) {
-      toast.error(err.message || "Failed to sign in");
+      toast.error(err.message || "Falha ao entrar");
     } finally {
       setLoading(false);
     }
@@ -42,22 +42,22 @@ const Login = () => {
             <div className="w-12 h-12 rounded-full gradient-hero flex items-center justify-center">
               <PawPrint className="w-6 h-6 text-primary-foreground" />
             </div>
-            <span className="font-display text-2xl font-bold text-foreground">PawStay</span>
+            <span className="font-display text-2xl font-bold text-foreground">AuMiau</span>
           </Link>
-          <h1 className="text-2xl font-bold text-foreground mb-2">Welcome Back</h1>
-          <p className="text-muted-foreground text-sm">Sign in to your PawStay account</p>
+          <h1 className="text-2xl font-bold text-foreground mb-2">Bem-vindo de Volta</h1>
+          <p className="text-muted-foreground text-sm">Entre na sua conta AuMiau</p>
         </div>
 
         <div className="bg-card rounded-2xl border border-border p-8">
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="space-y-2">
-              <Label htmlFor="email">Email</Label>
+              <Label htmlFor="email">E-mail</Label>
               <div className="relative">
                 <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
                 <Input
                   id="email"
                   type="email"
-                  placeholder="you@example.com"
+                  placeholder="voce@exemplo.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="pl-10"
@@ -67,7 +67,7 @@ const Login = () => {
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="password">Password</Label>
+              <Label htmlFor="password">Senha</Label>
               <div className="relative">
                 <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
                 <Input
@@ -90,14 +90,14 @@ const Login = () => {
             </div>
 
             <Button type="submit" className="w-full" disabled={loading}>
-              {loading ? "Signing in..." : "Sign In"}
+              {loading ? "Entrando..." : "Entrar"}
             </Button>
           </form>
 
           <p className="text-center text-sm text-muted-foreground mt-6">
-            Don't have an account?{" "}
+            Não tem uma conta?{" "}
             <Link to="/signup" className="text-primary font-semibold hover:underline">
-              Sign Up
+              Cadastre-se
             </Link>
           </p>
         </div>

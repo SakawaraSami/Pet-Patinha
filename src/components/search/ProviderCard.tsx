@@ -18,16 +18,14 @@ const ProviderCard = ({ provider, index }: ProviderCardProps) => (
     <Link to={`/provider/${provider.id}`} className="block">
       <div className="bg-card rounded-2xl border border-border hover:shadow-elevated transition-all duration-300 p-5 group">
         <div className="flex gap-4">
-          {/* Avatar */}
           <div className="w-16 h-16 rounded-full gradient-hero flex items-center justify-center text-primary-foreground font-display font-bold text-xl shrink-0">
             {provider.initials}
           </div>
 
-          {/* Info */}
           <div className="flex-1 min-w-0">
             <div className="flex items-center gap-2 flex-wrap">
               <h3 className="font-display font-semibold text-foreground text-lg">{provider.name}</h3>
-              {provider.badges.includes("Verified") && (
+              {provider.badges.includes("Verificado") && (
                 <ShieldCheck className="w-4 h-4 text-primary shrink-0" />
               )}
             </div>
@@ -35,14 +33,13 @@ const ProviderCard = ({ provider, index }: ProviderCardProps) => (
             <div className="flex items-center gap-1 text-sm mt-0.5">
               <Star className="w-4 h-4 fill-primary text-primary" />
               <span className="font-semibold text-foreground">{provider.rating}</span>
-              <span className="text-muted-foreground">({provider.reviews} reviews)</span>
+              <span className="text-muted-foreground">({provider.reviews} avaliações)</span>
             </div>
 
             <p className="text-sm text-muted-foreground mt-1 truncate">{provider.specialty}</p>
 
-            {/* Badges */}
             <div className="flex gap-1.5 mt-2 flex-wrap">
-              {provider.badges.filter(b => b !== "Verified").map((badge) => (
+              {provider.badges.filter(b => b !== "Verificado").map((badge) => (
                 <span
                   key={badge}
                   className="text-xs font-medium bg-secondary text-primary px-2 py-0.5 rounded-full"
@@ -54,12 +51,11 @@ const ProviderCard = ({ provider, index }: ProviderCardProps) => (
           </div>
         </div>
 
-        {/* Footer stats */}
         <div className="flex items-center justify-between mt-4 pt-3 border-t border-border text-sm">
-          <span className="font-display font-bold text-primary">From ${provider.price}/night</span>
+          <span className="font-display font-bold text-primary">A partir de R$ {provider.price}/noite</span>
           <div className="flex items-center gap-3 text-muted-foreground text-xs">
             <span className="flex items-center gap-1">
-              <MapPin className="w-3 h-3" /> {provider.distance} mi
+              <MapPin className="w-3 h-3" /> {provider.distance} km
             </span>
             <span className="flex items-center gap-1">
               <Clock className="w-3 h-3" /> {provider.responseTime}

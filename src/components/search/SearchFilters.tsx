@@ -13,9 +13,9 @@ interface SearchFiltersProps {
   setFeatures: (v: string[]) => void;
 }
 
-const SERVICE_OPTIONS = ["Boarding", "Walking", "Day Care", "House Sitting", "Drop-Ins"];
-const PET_SIZE_OPTIONS = ["Small", "Medium", "Large"];
-const FEATURE_OPTIONS = ["Fenced yard", "No other pets", "Accepts cats", "Medication admin", "Has resident dogs", "Exotic pets"];
+const SERVICE_OPTIONS = ["Hospedagem", "Passeio", "Creche", "Cuidado na Sua Casa", "Visitas"];
+const PET_SIZE_OPTIONS = ["Pequeno", "Médio", "Grande"];
+const FEATURE_OPTIONS = ["Quintal cercado", "Sem outros pets", "Aceita gatos", "Administra medicação", "Tem cães residentes", "Pets exóticos"];
 
 const toggle = (arr: string[], val: string) =>
   arr.includes(val) ? arr.filter((v) => v !== val) : [...arr, val];
@@ -27,9 +27,8 @@ const SearchFilters = ({
   features, setFeatures,
 }: SearchFiltersProps) => (
   <div className="space-y-6">
-    {/* Service Type */}
     <div>
-      <h3 className="font-display font-semibold text-foreground mb-3">Service Type</h3>
+      <h3 className="font-display font-semibold text-foreground mb-3">Tipo de Serviço</h3>
       <div className="space-y-2.5">
         {SERVICE_OPTIONS.map((s) => (
           <div key={s} className="flex items-center gap-2">
@@ -44,26 +43,24 @@ const SearchFilters = ({
       </div>
     </div>
 
-    {/* Price Range */}
     <div>
-      <h3 className="font-display font-semibold text-foreground mb-3">Price Range</h3>
+      <h3 className="font-display font-semibold text-foreground mb-3">Faixa de Preço</h3>
       <Slider
-        min={15}
-        max={100}
-        step={5}
+        min={75}
+        max={500}
+        step={25}
         value={priceRange}
         onValueChange={setPriceRange}
         className="my-4"
       />
       <div className="flex justify-between text-sm text-muted-foreground">
-        <span>${priceRange[0]}</span>
-        <span>${priceRange[1]}</span>
+        <span>R$ {priceRange[0]}</span>
+        <span>R$ {priceRange[1]}</span>
       </div>
     </div>
 
-    {/* Pet Size */}
     <div>
-      <h3 className="font-display font-semibold text-foreground mb-3">Pet Size</h3>
+      <h3 className="font-display font-semibold text-foreground mb-3">Porte do Pet</h3>
       <div className="flex gap-2">
         {PET_SIZE_OPTIONS.map((size) => (
           <button
@@ -81,9 +78,8 @@ const SearchFilters = ({
       </div>
     </div>
 
-    {/* Features */}
     <div>
-      <h3 className="font-display font-semibold text-foreground mb-3">Provider Features</h3>
+      <h3 className="font-display font-semibold text-foreground mb-3">Características do Cuidador</h3>
       <div className="space-y-2.5">
         {FEATURE_OPTIONS.map((f) => (
           <div key={f} className="flex items-center gap-2">

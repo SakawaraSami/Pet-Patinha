@@ -2,9 +2,9 @@ import { ShieldCheck, Star, Headphones } from "lucide-react";
 import { motion } from "framer-motion";
 
 const badges = [
-  { icon: ShieldCheck, text: "12,500+ Verified Providers" },
-  { icon: Star, text: "4.9 Average Star Rating" },
-  { icon: Headphones, text: "24/7 Support & Protection" },
+  { icon: ShieldCheck, text: "12.500+ Cuidadores Verificados" },
+  { icon: Star, text: "Nota Média de 4,9 Estrelas" },
+  { icon: Headphones, text: "Suporte e Proteção 24/7" },
 ];
 
 const TrustBadges = () => (
