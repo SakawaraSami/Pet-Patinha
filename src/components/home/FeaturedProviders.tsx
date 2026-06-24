@@ -3,10 +3,10 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 
 const providers = [
-  { name: "Maria Rodriguez", rating: 4.95, reviews: 248, specialty: "Experienced with large breeds", price: 45, distance: 2.3 },
-  { name: "James Wilson", rating: 4.92, reviews: 189, specialty: "Certified pet first aid", price: 38, distance: 3.7 },
-  { name: "Sarah Kim", rating: 4.98, reviews: 312, specialty: "Fenced yard, no other pets", price: 52, distance: 1.8 },
-  { name: "David Thompson", rating: 4.89, reviews: 156, specialty: "Specializes in senior dogs", price: 42, distance: 4.2 },
+  { name: "Maria Rodrigues", rating: 4.95, reviews: 248, specialty: "Experiente com cães de grande porte", price: 225, distance: 2.3 },
+  { name: "Tiago Wilson", rating: 4.92, reviews: 189, specialty: "Certificado em primeiros socorros pet", price: 190, distance: 3.7 },
+  { name: "Sara Kim", rating: 4.98, reviews: 312, specialty: "Quintal cercado, sem outros pets", price: 260, distance: 1.8 },
+  { name: "Davi Thompson", rating: 4.89, reviews: 156, specialty: "Especialista em cães idosos", price: 210, distance: 4.2 },
 ];
 
 const FeaturedProviders = () => {
@@ -18,8 +18,8 @@ const FeaturedProviders = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between mb-8">
           <div>
-            <p className="font-display text-primary italic text-lg">Top Rated</p>
-            <h2 className="text-3xl font-bold text-foreground">Featured Providers</h2>
+            <p className="font-display text-primary italic text-lg">Mais Bem Avaliados</p>
+            <h2 className="text-3xl font-bold text-foreground">Cuidadores em Destaque</h2>
           </div>
           <div className="flex gap-2">
             <button
@@ -46,7 +46,6 @@ const FeaturedProviders = () => {
               transition={{ delay: i * 0.1 }}
               className="bg-card rounded-2xl border border-border hover:shadow-elevated transition-all duration-300 p-5 cursor-pointer group"
             >
-              {/* Avatar placeholder */}
               <div className="w-16 h-16 rounded-full gradient-hero flex items-center justify-center text-primary-foreground font-display font-bold text-xl mb-3">
                 {prov.name.split(" ").map(n => n[0]).join("")}
               </div>
@@ -54,13 +53,13 @@ const FeaturedProviders = () => {
               <div className="flex items-center gap-1 text-sm mt-1">
                 <Star className="w-4 h-4 fill-primary text-primary" />
                 <span className="font-semibold text-foreground">{prov.rating}</span>
-                <span className="text-muted-foreground">({prov.reviews} reviews)</span>
+                <span className="text-muted-foreground">({prov.reviews} avaliações)</span>
               </div>
               <p className="text-sm text-muted-foreground mt-2">{prov.specialty}</p>
               <div className="flex items-center justify-between mt-4 pt-3 border-t border-border">
-                <span className="font-display font-bold text-primary">From ${prov.price}/night</span>
+                <span className="font-display font-bold text-primary">A partir de R$ {prov.price}/noite</span>
                 <span className="flex items-center gap-1 text-xs text-muted-foreground">
-                  <MapPin className="w-3 h-3" /> {prov.distance} mi
+                  <MapPin className="w-3 h-3" /> {prov.distance} km
                 </span>
               </div>
             </motion.div>

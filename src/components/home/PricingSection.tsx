@@ -3,30 +3,28 @@ import { motion } from "framer-motion";
 
 const plans = [
   {
-    label: "Day",
-    price: "Free",
-    note: "If you are a new client, we will give your pet day care for free the first 24 hours.",
+    label: "Diária",
+    price: "Grátis",
+    note: "Se você é um novo cliente, oferecemos as primeiras 24 horas de creche para seu pet de graça.",
   },
   {
-    label: "Week",
-    price: "$759",
-    note: "Book a room for the month, get free training with a dog handler in the outside.",
+    label: "Semanal",
+    price: "R$ 3.795",
+    note: "Reserve um quarto pelo mês e ganhe treinamento gratuito com um adestrador ao ar livre.",
     featured: true,
   },
   {
-    label: "Month",
-    price: "$1599",
-    note: "Give your puppy more games and exercise when you leave them for day care.",
+    label: "Mensal",
+    price: "R$ 7.995",
+    note: "Mais brincadeiras e exercícios para o seu pet quando ele ficar na creche.",
   },
 ];
 
 const PricingSection = () => (
   <section id="pricing" className="py-16 bg-card">
     <div className="container mx-auto px-4 text-center">
-      <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-2">Choose Your Price</h2>
-      <p className="text-muted-foreground mb-10 max-w-md mx-auto text-sm">
-        Flexible pricing options for every pet care need
-      </p>
+      <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-2">Escolha o Seu Plano</h2>
+      <p className="text-muted-foreground mb-10">Preços transparentes, sem surpresas</p>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
         {plans.map((plan, i) => (
@@ -44,15 +42,10 @@ const PricingSection = () => (
               {plan.label}
             </div>
             <div className="text-4xl font-bold text-primary font-display mb-3">
-              {plan.price === "Free" ? plan.price : (
-                <>
-                  <span className="text-lg align-top">$</span>
-                  {plan.price.replace("$", "")}
-                </>
-              )}
+              {plan.price}
             </div>
             <p className="text-muted-foreground text-sm mb-6 leading-relaxed">{plan.note}</p>
-            <Button className="w-full rounded-full">Book Now</Button>
+            <Button className="w-full rounded-full">Reservar Agora</Button>
           </motion.div>
         ))}
       </div>

@@ -10,45 +10,45 @@ const Footer = () => (
             <div className="w-10 h-10 rounded-full gradient-hero flex items-center justify-center">
               <PawPrint className="w-5 h-5 text-primary-foreground" />
             </div>
-            <span className="font-display text-xl font-bold">PawStay</span>
+            <span className="font-display text-xl font-bold">AuMiau</span>
           </div>
           <p className="text-sm opacity-70 leading-relaxed">
-            Connecting pet owners with trusted local caregivers. Your pet's happiness is our mission.
+            Conectando tutores a cuidadores locais de confiança. A felicidade do seu pet é a nossa missão.
           </p>
         </div>
 
         <div>
-          <h4 className="font-display font-semibold mb-4">Services</h4>
+          <h4 className="font-display font-semibold mb-4">Serviços</h4>
           <ul className="space-y-2 text-sm opacity-70">
-            <li><Link to="/search" className="hover:opacity-100 transition-opacity">Boarding</Link></li>
-            <li><Link to="/search" className="hover:opacity-100 transition-opacity">Dog Walking</Link></li>
-            <li><Link to="/search" className="hover:opacity-100 transition-opacity">Day Care</Link></li>
-            <li><Link to="/search" className="hover:opacity-100 transition-opacity">House Sitting</Link></li>
+            <li><Link to="/search" className="hover:opacity-100 transition-opacity">Hospedagem</Link></li>
+            <li><Link to="/search" className="hover:opacity-100 transition-opacity">Passeio com Cães</Link></li>
+            <li><Link to="/search" className="hover:opacity-100 transition-opacity">Creche</Link></li>
+            <li><Link to="/search" className="hover:opacity-100 transition-opacity">Cuidado na Sua Casa</Link></li>
           </ul>
         </div>
 
         <div>
-          <h4 className="font-display font-semibold mb-4">Company</h4>
+          <h4 className="font-display font-semibold mb-4">Empresa</h4>
           <ul className="space-y-2 text-sm opacity-70">
-            <li><Link to="/providers" className="hover:opacity-100 transition-opacity">Become a Provider</Link></li>
-            <li><Link to="/" className="hover:opacity-100 transition-opacity">About Us</Link></li>
+            <li><Link to="/providers" className="hover:opacity-100 transition-opacity">Seja um Cuidador</Link></li>
+            <li><Link to="/" className="hover:opacity-100 transition-opacity">Sobre Nós</Link></li>
             <li><Link to="/" className="hover:opacity-100 transition-opacity">Blog</Link></li>
-            <li><Link to="/" className="hover:opacity-100 transition-opacity">Careers</Link></li>
+            <li><Link to="/" className="hover:opacity-100 transition-opacity">Carreiras</Link></li>
           </ul>
         </div>
 
         <div>
-          <h4 className="font-display font-semibold mb-4">Contact</h4>
+          <h4 className="font-display font-semibold mb-4">Contato</h4>
           <ul className="space-y-3 text-sm opacity-70">
-            <li className="flex items-center gap-2"><Phone className="w-4 h-4" /> 123-456-6789</li>
-            <li className="flex items-center gap-2"><Mail className="w-4 h-4" /> hello@pawstay.com</li>
-            <li className="flex items-center gap-2"><MapPin className="w-4 h-4" /> Seattle, WA</li>
+            <li className="flex items-center gap-2"><Phone className="w-4 h-4" /> (11) 3456-7890</li>
+            <li className="flex items-center gap-2"><Mail className="w-4 h-4" /> contato@aumiau.com.br</li>
+            <li className="flex items-center gap-2"><MapPin className="w-4 h-4" /> São Paulo, SP</li>
           </ul>
         </div>
       </div>
 
       <div className="mt-12 pt-8 border-t border-secondary/20 text-center text-sm opacity-50">
-        © 2026 PawStay Connect. All rights reserved.
+        © 2026 AuMiau. Todos os direitos reservados.
       </div>
     </div>
   </footer>

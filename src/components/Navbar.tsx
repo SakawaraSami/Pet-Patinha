@@ -7,11 +7,11 @@ import { useAuth } from "@/contexts/AuthContext";
 import { toast } from "sonner";
 
 const navLinks = [
-  { label: "Home", href: "/" },
-  { label: "Find Care", href: "/search" },
-  { label: "Services", href: "/#services" },
-  { label: "Pricing", href: "/#pricing" },
-  { label: "For Providers", href: "/providers" },
+  { label: "Início", href: "/" },
+  { label: "Encontrar Cuidador", href: "/search" },
+  { label: "Serviços", href: "/#services" },
+  { label: "Preços", href: "/#pricing" },
+  { label: "Para Cuidadores", href: "/providers" },
 ];
 
 const Navbar = () => {
@@ -22,10 +22,10 @@ const Navbar = () => {
   const handleSignOut = async () => {
     try {
       await signOut();
-      toast.success("Signed out successfully");
+      toast.success("Sessão encerrada com sucesso");
       navigate("/");
     } catch {
-      toast.error("Failed to sign out");
+      toast.error("Falha ao sair");
     }
   };
 
@@ -36,7 +36,7 @@ const Navbar = () => {
           <div className="w-10 h-10 rounded-full gradient-hero flex items-center justify-center">
             <PawPrint className="w-5 h-5 text-primary-foreground" />
           </div>
-          <span className="font-display text-xl font-bold text-foreground">PawStay</span>
+          <span className="font-display text-xl font-bold text-foreground">AuMiau</span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-6">
@@ -52,9 +52,9 @@ const Navbar = () => {
         </nav>
 
         <div className="hidden md:flex items-center gap-3">
-          <a href="tel:123-456-6789" className="flex items-center gap-2 text-sm text-muted-foreground">
+          <a href="tel:+551134567890" className="flex items-center gap-2 text-sm text-muted-foreground">
             <Phone className="w-4 h-4" />
-            123-456-6789
+            (11) 3456-7890
           </a>
           {!loading && (
             user ? (
@@ -64,16 +64,16 @@ const Navbar = () => {
                 </span>
                 <Button variant="outline" size="sm" onClick={handleSignOut}>
                   <LogOut className="w-4 h-4 mr-1" />
-                  Sign Out
+                  Sair
                 </Button>
               </>
             ) : (
               <>
                 <Button variant="outline" size="sm" asChild>
-                  <Link to="/login">Log In</Link>
+                  <Link to="/login">Entrar</Link>
                 </Button>
                 <Button size="sm" asChild>
-                  <Link to="/signup">Sign Up</Link>
+                  <Link to="/signup">Cadastrar</Link>
                 </Button>
               </>
             )
@@ -111,15 +111,15 @@ const Navbar = () => {
                 {user ? (
                   <Button variant="outline" size="sm" className="flex-1" onClick={() => { handleSignOut(); setMobileOpen(false); }}>
                     <LogOut className="w-4 h-4 mr-1" />
-                    Sign Out
+                    Sair
                   </Button>
                 ) : (
                   <>
                     <Button variant="outline" size="sm" className="flex-1" asChild>
-                      <Link to="/login" onClick={() => setMobileOpen(false)}>Log In</Link>
+                      <Link to="/login" onClick={() => setMobileOpen(false)}>Entrar</Link>
                     </Button>
                     <Button size="sm" className="flex-1" asChild>
-                      <Link to="/signup" onClick={() => setMobileOpen(false)}>Sign Up</Link>
+                      <Link to="/signup" onClick={() => setMobileOpen(false)}>Cadastrar</Link>
                     </Button>
                   </>
                 )}

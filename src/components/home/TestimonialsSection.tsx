@@ -3,21 +3,21 @@ import { motion } from "framer-motion";
 
 const testimonials = [
   {
-    text: "Found the perfect sitter for my anxious rescue. Maria sent daily photos and my pup came home happy!",
+    text: "Encontrei a cuidadora perfeita para meu resgatado ansioso. A Maria mandou fotos diárias e meu cãozinho voltou feliz!",
     author: "Jennifer L.",
-    pet: "Golden Retriever owner",
+    pet: "Tutora de Golden Retriever",
     rating: 5,
   },
   {
-    text: "James went above and beyond during our vacation. Our cats were so well cared for!",
+    text: "O James foi além do esperado durante nossas férias. Nossos gatos foram super bem cuidados!",
     author: "Mike S.",
-    pet: "Cat owner",
+    pet: "Tutor de gato",
     rating: 5,
   },
   {
-    text: "Best decision ever! Sarah has become our regular sitter. Highly recommend!",
+    text: "Melhor decisão de todas! A Sarah virou nossa cuidadora regular. Super recomendo!",
     author: "Rachel P.",
-    pet: "French Bulldog owner",
+    pet: "Tutora de Buldogue Francês",
     rating: 5,
   },
 ];
@@ -26,8 +26,8 @@ const TestimonialsSection = () => (
   <section className="py-16">
     <div className="container mx-auto px-4">
       <div className="text-center mb-10">
-        <p className="font-display text-primary italic text-lg">Our Clients</p>
-        <h2 className="text-3xl md:text-4xl font-bold text-foreground">Your Testimonials</h2>
+        <p className="font-display text-primary italic text-lg">Nossos Clientes</p>
+        <h2 className="text-3xl md:text-4xl font-bold text-foreground">Seus Depoimentos</h2>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">

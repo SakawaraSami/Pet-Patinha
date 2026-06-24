@@ -1,4 +1,4 @@
-import { Star, Quote } from "lucide-react";
+import { Star } from "lucide-react";
 import { motion } from "framer-motion";
 
 interface Review {
@@ -18,9 +18,8 @@ const ProviderReviews = ({ reviews, overallRating }: { reviews: Review[]; overal
 
   return (
     <div>
-      <h2 className="text-2xl font-bold text-foreground mb-5">Reviews</h2>
+      <h2 className="text-2xl font-bold text-foreground mb-5">Avaliações</h2>
 
-      {/* Rating breakdown */}
       <div className="bg-card rounded-2xl shadow-card p-6 mb-6">
         <div className="flex items-center gap-4 mb-4">
           <span className="font-display font-bold text-4xl text-foreground">{overallRating}</span>
@@ -30,7 +29,7 @@ const ProviderReviews = ({ reviews, overallRating }: { reviews: Review[]; overal
                 <Star key={s} className={`w-5 h-5 ${s <= Math.round(overallRating) ? "fill-primary text-primary" : "text-border"}`} />
               ))}
             </div>
-            <p className="text-sm text-muted-foreground mt-0.5">{reviews.length} reviews</p>
+            <p className="text-sm text-muted-foreground mt-0.5">{reviews.length} avaliações</p>
           </div>
         </div>
         <div className="space-y-2">
@@ -50,7 +49,6 @@ const ProviderReviews = ({ reviews, overallRating }: { reviews: Review[]; overal
         </div>
       </div>
 
-      {/* Review cards */}
       <div className="space-y-4">
         {reviews.map((review, i) => (
           <motion.div

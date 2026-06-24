@@ -3,34 +3,32 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 
 const services = [
-  { icon: Scissors, title: "Best Grooming", desc: "Professional grooming for all breeds" },
-  { icon: GraduationCap, title: "Professional Training", desc: "Expert behavioral training" },
-  { icon: Salad, title: "Special Diet", desc: "Customized nutrition plans" },
-  { icon: Stethoscope, title: "Vet Services", desc: "On-call veterinary care" },
+  { icon: Scissors, title: "Banho e Tosa", desc: "Cuidados profissionais para todas as raças" },
+  { icon: GraduationCap, title: "Adestramento Profissional", desc: "Treinamento comportamental por especialistas" },
+  { icon: Salad, title: "Dieta Especial", desc: "Planos nutricionais personalizados" },
+  { icon: Stethoscope, title: "Serviços Veterinários", desc: "Atendimento veterinário sob demanda" },
 ];
 
 const ServicesSection = () => (
   <section id="services" className="py-16 bg-card">
     <div className="container mx-auto px-4">
       <div className="grid lg:grid-cols-2 gap-12 items-center">
-        {/* Left text */}
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
         >
-          <p className="font-display text-primary text-lg italic mb-1">Services</p>
+          <p className="font-display text-primary text-lg italic mb-1">Serviços</p>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Specially For Your Pets
+            Especialmente Para o Seu Pet
           </h2>
           <p className="text-muted-foreground leading-relaxed mb-6 max-w-md">
-            We offer comprehensive pet care including boarding, grooming, training, and veterinary services. 
-            Discounts available for long-term stays over 30 days.
+            Oferecemos cuidados completos para pets, incluindo hospedagem, banho e tosa, adestramento e serviços veterinários.
+            Descontos disponíveis para estadias longas, acima de 30 dias.
           </p>
-          <Button>Read More</Button>
+          <Button>Saiba Mais</Button>
         </motion.div>
 
-        {/* Right grid */}
         <div className="grid grid-cols-2 gap-4">
           {services.map((svc, i) => (
             <motion.div

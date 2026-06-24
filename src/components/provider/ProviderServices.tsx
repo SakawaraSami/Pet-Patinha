@@ -9,16 +9,16 @@ interface Service {
 }
 
 const iconMap: Record<string, React.ReactNode> = {
-  "Overnight Boarding": <Home className="w-6 h-6" />,
-  "Dog Walking": <Footprints className="w-6 h-6" />,
-  "Doggy Day Care": <Sun className="w-6 h-6" />,
-  "House Sitting": <Home className="w-6 h-6" />,
-  "Drop-In Visits": <MapPin className="w-6 h-6" />,
+  "Hospedagem com Pernoite": <Home className="w-6 h-6" />,
+  "Passeio com Cães": <Footprints className="w-6 h-6" />,
+  "Creche Diurna": <Sun className="w-6 h-6" />,
+  "Cuidado na Sua Casa": <Home className="w-6 h-6" />,
+  "Visitas em Casa": <MapPin className="w-6 h-6" />,
 };
 
 const ProviderServices = ({ services }: { services: Service[] }) => (
   <div>
-    <h2 className="text-2xl font-bold text-foreground mb-5">Services & Pricing</h2>
+    <h2 className="text-2xl font-bold text-foreground mb-5">Serviços e Preços</h2>
     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
       {services.map((s, i) => (
         <motion.div
@@ -34,7 +34,7 @@ const ProviderServices = ({ services }: { services: Service[] }) => (
           </div>
           <h3 className="font-display font-semibold text-foreground">{s.name}</h3>
           <p className="text-sm text-muted-foreground mt-1 mb-3">{s.description}</p>
-          <p className="font-display font-bold text-primary text-lg">${s.price}<span className="text-sm font-normal text-muted-foreground">/{s.unit}</span></p>
+          <p className="font-display font-bold text-primary text-lg">R$ {s.price}<span className="text-sm font-normal text-muted-foreground">/{s.unit}</span></p>
         </motion.div>
       ))}
     </div>
