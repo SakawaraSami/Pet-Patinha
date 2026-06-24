@@ -1,12 +1,28 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { PawPrint, Mail, Lock, Eye, EyeOff, User } from "lucide-react";
+import { PawPrint, Mail, Lock, Eye, EyeOff, User, Phone, IdCard, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { motion } from "framer-motion";
 import { useAuth } from "@/contexts/AuthContext";
 import { toast } from "sonner";
+import {
+  maskPhone,
+  maskCPF,
+  maskCEP,
+  isValidCPF,
+  isValidPhoneBR,
+  isValidCEP,
+  BR_STATES,
+} from "@/lib/brMasks";
 
 const Signup = () => {
   const [displayName, setDisplayName] = useState("");
@@ -14,6 +30,16 @@ const Signup = () => {
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [role, setRole] = useState<"pet_owner" | "provider">("pet_owner");
+
+  const [phone, setPhone] = useState("");
+  const [cpf, setCpf] = useState("");
+  const [street, setStreet] = useState("");
+  const [number, setNumber] = useState("");
+  const [complement, setComplement] = useState("");
+  const [city, setCity] = useState("");
+  const [state, setState] = useState("");
+  const [zip, setZip] = useState("");
+
   const [loading, setLoading] = useState(false);
   const { signUp } = useAuth();
   const navigate = useNavigate();
@@ -24,9 +50,29 @@ const Signup = () => {
       toast.error("A senha precisa ter pelo menos 6 caracteres");
       return;
     }
+    if (!isValidPhoneBR(phone)) {
+      toast.error("Telefone inválido. Use +55 (XX) XXXXX-XXXX");
+      return;
+    }
+    if (!isValidCPF(cpf)) {
+      toast.error("CPF inválido");
+      return;
+    }
+    if (!isValidCEP(zip)) {
+      toast.error("CEP inválido");
+      return;
+    }
+    if (!street || !number || !city || !state) {
+      toast.error("Preencha todos os campos obrigatórios do endereço");
+      return;
+    }
     setLoading(true);
     try {
-      await signUp(email, password, displayName, role);
+      await signUp(email, password, displayName, role, {
+        phone,
+        cpf,
+        address: { street, number, complement, city, state, zip },
+      });
       toast.success("Conta criada! Verifique seu e-mail para confirmar.");
       navigate("/");
     } catch (err: any) {
@@ -139,6 +185,129 @@ const Signup = () => {
                 >
                   {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
                 </button>
+              </div>
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="phone">Telefone</Label>
+              <div className="relative">
+                <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+                <Input
+                  id="phone"
+                  type="tel"
+                  inputMode="tel"
+                  placeholder="+55 (11) 91234-5678"
+                  value={phone}
+                  onChange={(e) => setPhone(maskPhone(e.target.value))}
+                  className="pl-10"
+                  required
+                />
+              </div>
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="cpf">CPF</Label>
+              <div className="relative">
+                <IdCard className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+                <Input
+                  id="cpf"
+                  type="text"
+                  inputMode="numeric"
+                  placeholder="000.000.000-00"
+                  value={cpf}
+                  onChange={(e) => setCpf(maskCPF(e.target.value))}
+                  className="pl-10"
+                  maxLength={14}
+                  required
+                />
+              </div>
+            </div>
+
+            <div className="pt-2">
+              <div className="flex items-center gap-2 mb-3">
+                <MapPin className="w-4 h-4 text-primary" />
+                <h3 className="text-sm font-semibold text-foreground">Endereço</h3>
+              </div>
+
+              <div className="space-y-4">
+                <div className="grid grid-cols-3 gap-3">
+                  <div className="col-span-2 space-y-2">
+                    <Label htmlFor="street">Logradouro</Label>
+                    <Input
+                      id="street"
+                      type="text"
+                      placeholder="Rua das Flores"
+                      value={street}
+                      onChange={(e) => setStreet(e.target.value)}
+                      required
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="number">Número</Label>
+                    <Input
+                      id="number"
+                      type="text"
+                      placeholder="123"
+                      value={number}
+                      onChange={(e) => setNumber(e.target.value)}
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="complement">Complemento</Label>
+                  <Input
+                    id="complement"
+                    type="text"
+                    placeholder="Apto 42, Bloco B (opcional)"
+                    value={complement}
+                    onChange={(e) => setComplement(e.target.value)}
+                  />
+                </div>
+
+                <div className="grid grid-cols-3 gap-3">
+                  <div className="col-span-2 space-y-2">
+                    <Label htmlFor="city">Cidade</Label>
+                    <Input
+                      id="city"
+                      type="text"
+                      placeholder="São Paulo"
+                      value={city}
+                      onChange={(e) => setCity(e.target.value)}
+                      required
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="state">Estado</Label>
+                    <Select value={state} onValueChange={setState}>
+                      <SelectTrigger id="state">
+                        <SelectValue placeholder="UF" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {BR_STATES.map((uf) => (
+                          <SelectItem key={uf} value={uf}>
+                            {uf}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </div>
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="zip">CEP</Label>
+                  <Input
+                    id="zip"
+                    type="text"
+                    inputMode="numeric"
+                    placeholder="00000-000"
+                    value={zip}
+                    onChange={(e) => setZip(maskCEP(e.target.value))}
+                    maxLength={9}
+                    required
+                  />
+                </div>
               </div>
             </div>
 
