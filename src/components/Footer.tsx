@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { PawPrint, Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
+import logoSymbol from "@/assets/logo-symbol.png";
 
 const Footer = () => (
   <footer className="bg-foreground text-secondary py-16">
@@ -8,7 +9,7 @@ const Footer = () => (
         <div>
           <div className="flex items-center gap-2 mb-4">
             <div className="w-10 h-10 rounded-full gradient-hero flex items-center justify-center">
-              <PawPrint className="w-5 h-5 text-primary-foreground" />
+              <img src={logoSymbol} alt="Pet Patinha" className="w-5 h-5 object-contain" />
             </div>
             <span className="font-display text-xl font-bold">Pet Patinha</span>
           </div>
