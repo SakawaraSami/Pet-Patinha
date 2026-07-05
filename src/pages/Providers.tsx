@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { PawPrint, DollarSign, Calendar, Shield, Users } from "lucide-react";
+import { DollarSign, Calendar, Shield, Users } from "lucide-react";
+import logoSymbol from "@/assets/logo-symbol.png";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";

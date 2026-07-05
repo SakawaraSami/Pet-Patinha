@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { PawPrint, Menu, X, Phone, LogOut } from "lucide-react";
+import { Menu, X, Phone, LogOut } from "lucide-react";
+import logoSymbol from "@/assets/logo-symbol.png";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import { useAuth } from "@/contexts/AuthContext";

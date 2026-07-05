@@ -23,6 +23,7 @@ import {
   isValidCEP,
   BR_STATES,
 } from "@/lib/brMasks";
+import logoSymbol from "@/assets/logo-symbol.png";
 
 const Signup = () => {
   const [displayName, setDisplayName] = useState("");
