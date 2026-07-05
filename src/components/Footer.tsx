@@ -10,7 +10,7 @@ const Footer = () => (
             <div className="w-10 h-10 rounded-full gradient-hero flex items-center justify-center">
               <PawPrint className="w-5 h-5 text-primary-foreground" />
             </div>
-            <span className="font-display text-xl font-bold">AuMiau</span>
+            <span className="font-display text-xl font-bold">Pet Patinha</span>
           </div>
           <p className="text-sm opacity-70 leading-relaxed">
             Conectando tutores a cuidadores locais de confiança. A felicidade do seu pet é a nossa missão.
@@ -41,14 +41,14 @@ const Footer = () => (
           <h4 className="font-display font-semibold mb-4">Contato</h4>
           <ul className="space-y-3 text-sm opacity-70">
             <li className="flex items-center gap-2"><Phone className="w-4 h-4" /> (11) 3456-7890</li>
-            <li className="flex items-center gap-2"><Mail className="w-4 h-4" /> contato@aumiau.com.br</li>
+            <li className="flex items-center gap-2"><Mail className="w-4 h-4" /> contato@petpatinha.com.br</li>
             <li className="flex items-center gap-2"><MapPin className="w-4 h-4" /> São Paulo, SP</li>
           </ul>
         </div>
       </div>
 
       <div className="mt-12 pt-8 border-t border-secondary/20 text-center text-sm opacity-50">
-        © 2026 AuMiau. Todos os direitos reservados.
+        © 2026 Pet Patinha. Todos os direitos reservados.
       </div>
     </div>
   </footer>

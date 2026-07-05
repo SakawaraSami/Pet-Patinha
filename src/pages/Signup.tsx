@@ -94,10 +94,10 @@ const Signup = () => {
             <div className="w-12 h-12 rounded-full gradient-hero flex items-center justify-center">
               <PawPrint className="w-6 h-6 text-primary-foreground" />
             </div>
-            <span className="font-display text-2xl font-bold text-foreground">AuMiau</span>
+            <span className="font-display text-2xl font-bold text-foreground">Pet Patinha</span>
           </Link>
           <h1 className="text-2xl font-bold text-foreground mb-2">Crie Sua Conta</h1>
-          <p className="text-muted-foreground text-sm">Junte-se à AuMiau para encontrar ou oferecer cuidados pet</p>
+          <p className="text-muted-foreground text-sm">Junte-se à Pet Patinha para encontrar ou oferecer cuidados pet</p>
         </div>
 
         <div className="bg-card rounded-2xl border border-border p-8">

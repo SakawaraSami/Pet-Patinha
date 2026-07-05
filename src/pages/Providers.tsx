@@ -36,7 +36,7 @@ const Providers = () => (
             Transforme Seu Amor por Pets em Renda
           </h1>
           <p className="text-primary-foreground/80 text-lg max-w-2xl mx-auto mb-8">
-            Junte-se à AuMiau como cuidador de pets e ganhe dinheiro fazendo o que ama. Defina sua agenda, preços e serviços.
+            Junte-se à Pet Patinha como cuidador de pets e ganhe dinheiro fazendo o que ama. Defina sua agenda, preços e serviços.
           </p>
           <Button size="lg" variant="secondary" className="rounded-xl font-semibold text-base px-8" asChild>
             <Link to="/signup">Começar Agora</Link>
@@ -47,7 +47,7 @@ const Providers = () => (
 
     <section className="py-16">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-foreground text-center mb-10">Por Que Ser Cuidador na AuMiau?</h2>
+        <h2 className="text-3xl font-bold text-foreground text-center mb-10">Por Que Ser Cuidador na Pet Patinha?</h2>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {benefits.map((b, i) => (
             <motion.div
