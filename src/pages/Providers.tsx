@@ -31,7 +31,7 @@ const Providers = () => (
           className="gradient-hero rounded-3xl p-8 md:p-16 text-center"
         >
           <div className="w-16 h-16 rounded-full bg-primary-foreground/20 flex items-center justify-center mx-auto mb-6">
-            <PawPrint className="w-8 h-8 text-primary-foreground" />
+            <img src={logoSymbol} alt="Pet Patinha" className="w-8 h-8 object-contain" />
           </div>
           <h1 className="text-3xl md:text-5xl font-bold text-primary-foreground mb-4">
             Transforme Seu Amor por Pets em Renda

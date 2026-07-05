@@ -35,7 +35,7 @@ const Navbar = () => {
       <div className="container mx-auto flex items-center justify-between px-4 py-3">
         <Link to="/" className="flex items-center gap-2">
           <div className="w-10 h-10 rounded-full gradient-hero flex items-center justify-center">
-            <PawPrint className="w-5 h-5 text-primary-foreground" />
+            <img src={logoSymbol} alt="Pet Patinha" className="w-5 h-5 object-contain" />
           </div>
           <span className="font-display text-xl font-bold text-foreground">Pet Patinha</span>
         </Link>

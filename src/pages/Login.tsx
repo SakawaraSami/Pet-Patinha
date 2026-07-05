@@ -41,7 +41,7 @@ const Login = () => {
         <div className="text-center mb-8">
           <Link to="/" className="inline-flex items-center gap-2 mb-6">
             <div className="w-12 h-12 rounded-full gradient-hero flex items-center justify-center">
-              <PawPrint className="w-6 h-6 text-primary-foreground" />
+              <img src={logoSymbol} alt="Pet Patinha" className="w-6 h-6 object-contain" />
             </div>
             <span className="font-display text-2xl font-bold text-foreground">Pet Patinha</span>
           </Link>
