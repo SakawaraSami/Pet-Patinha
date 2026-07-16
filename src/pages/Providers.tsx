@@ -30,8 +30,8 @@ const Providers = () => (
           animate={{ opacity: 1, y: 0 }}
           className="gradient-hero rounded-3xl p-8 md:p-16 text-center"
         >
-          <div className="w-16 h-16 rounded-full bg-primary-foreground/20 flex items-center justify-center mx-auto mb-6">
-            <img src={logoSymbol} alt="Pet Patinha" className="w-8 h-8 object-contain" />
+          <div className="inline-block bg-background rounded-2xl p-4 mx-auto mb-6">
+            <img src={logoAsset.url} alt="Pet Patinha" className="h-20 w-auto object-contain" />
           </div>
           <h1 className="text-3xl md:text-5xl font-bold text-primary-foreground mb-4">
             Transforme Seu Amor por Pets em Renda
