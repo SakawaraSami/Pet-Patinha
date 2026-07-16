@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { DollarSign, Calendar, Shield, Users } from "lucide-react";
-import logoSymbol from "@/assets/logo-symbol.png";
+import logoAsset from "@/assets/pet-patinha-logo.jpeg.asset.json";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
