@@ -23,7 +23,7 @@ import {
   isValidCEP,
   BR_STATES,
 } from "@/lib/brMasks";
-import logoSymbol from "@/assets/logo-symbol.png";
+import logoAsset from "@/assets/pet-patinha-logo.jpeg.asset.json";
 
 const Signup = () => {
   const [displayName, setDisplayName] = useState("");
@@ -91,11 +91,8 @@ const Signup = () => {
         className="w-full max-w-md"
       >
         <div className="text-center mb-8">
-          <Link to="/" className="inline-flex items-center gap-2 mb-6">
-            <div className="w-12 h-12 rounded-full gradient-hero flex items-center justify-center">
-              <img src={logoSymbol} alt="Pet Patinha" className="w-6 h-6 object-contain" />
-            </div>
-            <span className="font-display text-2xl font-bold text-foreground">Pet Patinha</span>
+          <Link to="/" className="inline-flex items-center mb-6">
+            <img src={logoAsset.url} alt="Pet Patinha" className="h-20 w-auto object-contain" />
           </Link>
           <h1 className="text-2xl font-bold text-foreground mb-2">Crie Sua Conta</h1>
           <p className="text-muted-foreground text-sm">Junte-se à Pet Patinha para encontrar ou oferecer cuidados pet</p>

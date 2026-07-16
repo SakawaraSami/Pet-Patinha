@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Menu, X, Phone, LogOut } from "lucide-react";
-import logoSymbol from "@/assets/logo-symbol.png";
+import logoAsset from "@/assets/pet-patinha-logo.jpeg.asset.json";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import { useAuth } from "@/contexts/AuthContext";
@@ -33,11 +33,8 @@ const Navbar = () => {
   return (
     <header className="fixed top-0 left-0 right-0 bg-card/90 backdrop-blur-md z-50 border-b border-border">
       <div className="container mx-auto flex items-center justify-between px-4 py-3">
-        <Link to="/" className="flex items-center gap-2">
-          <div className="w-10 h-10 rounded-full gradient-hero flex items-center justify-center">
-            <img src={logoSymbol} alt="Pet Patinha" className="w-5 h-5 object-contain" />
-          </div>
-          <span className="font-display text-xl font-bold text-foreground">Pet Patinha</span>
+        <Link to="/" className="flex items-center">
+          <img src={logoAsset.url} alt="Pet Patinha" className="h-10 w-auto object-contain" />
         </Link>
 
         <nav className="hidden md:flex items-center gap-6">

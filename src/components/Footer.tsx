@@ -1,17 +1,14 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin } from "lucide-react";
-import logoSymbol from "@/assets/logo-symbol.png";
+import logoAsset from "@/assets/pet-patinha-logo.jpeg.asset.json";
 
 const Footer = () => (
   <footer className="bg-foreground text-secondary py-16">
     <div className="container mx-auto px-4">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
         <div>
-          <div className="flex items-center gap-2 mb-4">
-            <div className="w-10 h-10 rounded-full gradient-hero flex items-center justify-center">
-              <img src={logoSymbol} alt="Pet Patinha" className="w-5 h-5 object-contain" />
-            </div>
-            <span className="font-display text-xl font-bold">Pet Patinha</span>
+          <div className="mb-4 bg-background rounded-lg p-2 inline-block">
+            <img src={logoAsset.url} alt="Pet Patinha" className="h-12 w-auto object-contain" />
           </div>
           <p className="text-sm opacity-70 leading-relaxed">
             Conectando tutores a cuidadores locais de confiança. A felicidade do seu pet é a nossa missão.
