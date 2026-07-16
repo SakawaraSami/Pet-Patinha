@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin } from "lucide-react";
-import logoSymbol from "@/assets/logo-symbol.png";
+import logoAsset from "@/assets/pet-patinha-logo.jpeg.asset.json";
 
 const Footer = () => (
   <footer className="bg-foreground text-secondary py-16">
