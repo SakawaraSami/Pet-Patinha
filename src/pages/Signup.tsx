@@ -23,7 +23,7 @@ import {
   isValidCEP,
   BR_STATES,
 } from "@/lib/brMasks";
-import logoSymbol from "@/assets/logo-symbol.png";
+import logoAsset from "@/assets/pet-patinha-logo.jpeg.asset.json";
 
 const Signup = () => {
   const [displayName, setDisplayName] = useState("");
